@@ -1,0 +1,1199 @@
+# baseURI: http://temp1/Library
+# prefix: Library
+
+@prefix Library: <http://temp1/Library#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://temp1/Library>
+  a owl:Ontology ;
+  spin:imports <http://topbraid.org/spin/rdfsplus> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+Library:Action
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Action" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:ActionClient
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Action ;
+  rdfs:label "Borrow client" ;
+  rdfs:range Library:Client ;
+.
+Library:AfterSchoolHomeWorkHelp
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "After school home work help" ;
+  rdfs:subClassOf Library:Programs ;
+.
+Library:Author
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Author" ;
+  rdfs:subClassOf Library:Person ;
+.
+Library:Author_1
+  a Library:Author ;
+  Library:PersonAge 25 ;
+  Library:PersonId 21 ;
+  Library:PersonName "Author 1" ;
+  rdfs:comment "" ;
+  rdfs:label "Author 1" ;
+.
+Library:Author_2
+  a Library:Author ;
+  Library:PersonId 22 ;
+  Library:PersonName "Author 2" ;
+  rdfs:comment "" ;
+  rdfs:label "Author 2" ;
+.
+Library:Author_3
+  a Library:Author ;
+  Library:PersonAge 58 ;
+  Library:PersonId 23 ;
+  Library:PersonName "Author 3" ;
+  rdfs:comment "" ;
+  rdfs:label "Author 3" ;
+.
+Library:Author_4
+  a Library:Author ;
+  Library:PersonAge 45 ;
+  Library:PersonId 24 ;
+  Library:PersonName "Author 4" ;
+  rdfs:comment "" ;
+  rdfs:label "Author 4" ;
+.
+Library:Book
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Book" ;
+  rdfs:subClassOf Library:Product ;
+.
+Library:BookAuthor
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Book ;
+  rdfs:label "Book author" ;
+  rdfs:range Library:Author ;
+.
+Library:BookCategory
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Book ;
+  rdfs:label "Book category" ;
+  rdfs:range xsd:string ;
+.
+Library:BookPublisher
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Book ;
+  rdfs:label "Book publisher" ;
+  rdfs:range Library:Publisher ;
+.
+Library:BookReleaseDate
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Book ;
+  rdfs:label "Book release date" ;
+  rdfs:range xsd:date ;
+.
+Library:BookTitle
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Book ;
+  rdfs:label "Book title" ;
+  rdfs:range xsd:string ;
+.
+Library:Book_1
+  a Library:Book ;
+  Library:BookAuthor Library:Author_1 ;
+  Library:BookCategory "Psychology" ;
+  Library:BookPublisher Library:Publisher_1 ;
+  Library:BookReleaseDate "2015-12-08"^^xsd:date ;
+  Library:BookTitle "Title 1" ;
+  rdfs:comment "" ;
+  rdfs:label "Book 1" ;
+.
+Library:Book_2
+  a Library:Book ;
+  Library:BookAuthor Library:Author_1 ;
+  Library:BookCategory "Action" ;
+  Library:BookPublisher Library:Publisher_1 ;
+  Library:BookReleaseDate "2020-03-17"^^xsd:date ;
+  Library:BookTitle "Title 2" ;
+  rdfs:comment "" ;
+  rdfs:label "Book 2" ;
+.
+Library:Book_3
+  a Library:Book ;
+  Library:BookAuthor Library:Author_3 ;
+  Library:BookCategory "Poems" ;
+  Library:BookPublisher Library:Publisher_1 ;
+  Library:BookReleaseDate "2019-10-01"^^xsd:date ;
+  Library:BookTitle "Title 3" ;
+  rdfs:comment "" ;
+  rdfs:label "Book 3" ;
+.
+Library:Book_4
+  a Library:Book ;
+  Library:BookAuthor Library:Author_3 ;
+  Library:BookCategory "Psychology" ;
+  Library:BookPublisher Library:Publisher_2 ;
+  Library:BookReleaseDate "2017-12-15"^^xsd:date ;
+  Library:BookTitle "Title 4" ;
+  rdfs:comment "" ;
+  rdfs:label "Book 4" ;
+.
+Library:Book_5
+  a Library:Book ;
+  Library:BookAuthor Library:Author_4 ;
+  Library:BookCategory "ecology" ;
+  Library:BookPublisher Library:Publisher_2 ;
+  Library:BookReleaseDate "2022-03-16"^^xsd:date ;
+  Library:BookTitle "Title 5" ;
+  rdfs:comment "" ;
+  rdfs:label "Book 5" ;
+.
+Library:Borrow
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Borrow" ;
+  rdfs:subClassOf Library:Action ;
+.
+Library:BorrowBook
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Borrow ;
+  rdfs:label "Borrow book" ;
+  rdfs:range Library:Book ;
+.
+Library:BorrowEnd
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Borrow ;
+  rdfs:label "Borrow end" ;
+  rdfs:range xsd:date ;
+.
+Library:BorrowStart
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Borrow ;
+  rdfs:label "Borrow start" ;
+  rdfs:range xsd:date ;
+.
+Library:BorrowStuff
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Borrow ;
+  rdfs:label "Borrow stuff" ;
+  rdfs:range Library:Stuff ;
+.
+Library:Borrow_1
+  a Library:Borrow ;
+  Library:ActionClient Library:Client_1 ;
+  Library:BorrowBook Library:Book_1 ;
+  Library:BorrowEnd "2022-12-22"^^xsd:date ;
+  Library:BorrowStart "2023-11-23"^^xsd:date ;
+  Library:BorrowStuff Library:Stuff_1 ;
+  rdfs:comment "" ;
+  rdfs:label "Borrow 1" ;
+.
+Library:Borrow_2
+  a Library:Borrow ;
+  Library:ActionClient Library:Client_1 ;
+  Library:BorrowBook Library:Book_2 ;
+  Library:BorrowEnd "2022-12-31"^^xsd:date ;
+  Library:BorrowStart "2022-12-07"^^xsd:date ;
+  Library:BorrowStuff Library:Stuff_1 ;
+  rdfs:comment "" ;
+  rdfs:label "Borrow 2" ;
+.
+Library:Borrow_3
+  a Library:Borrow ;
+  Library:ActionClient Library:Client_2 ;
+  Library:BorrowBook Library:Book_5 ;
+  Library:BorrowEnd "2022-12-30"^^xsd:date ;
+  Library:BorrowStart "2022-11-07"^^xsd:date ;
+  Library:BorrowStuff Library:Stuff_2 ;
+  rdfs:comment "" ;
+  rdfs:label "Borrow 3" ;
+.
+Library:BorrowingCard
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Borrowing card" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:BorrowingCardId
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:BorrowingCard ;
+  rdfs:label "id" ;
+  rdfs:range xsd:integer ;
+.
+Library:BorrowingCardUntil
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:BorrowingCard ;
+  rdfs:label "Borrowing card until" ;
+  rdfs:range xsd:date ;
+.
+Library:BorrowingCard_1
+  a Library:BorrowingCard ;
+  Library:BorrowingCardId 1 ;
+  Library:BorrowingCardUntil "2023-12-31"^^xsd:date ;
+  rdfs:comment "" ;
+  rdfs:label "Borrowing card 1" ;
+.
+Library:BorrowingCard_2
+  a Library:BorrowingCard ;
+  Library:BorrowingCardId 2 ;
+  Library:BorrowingCardUntil "2024-12-31"^^xsd:date ;
+  rdfs:comment "" ;
+  rdfs:label "Borrowing card 2" ;
+.
+Library:BorrowingCard_3
+  a Library:BorrowingCard ;
+  Library:BorrowingCardId 3 ;
+  Library:BorrowingCardUntil "2023-12-31"^^xsd:date ;
+  rdfs:comment "" ;
+  rdfs:label "Borrowing card 3" ;
+.
+Library:Buy
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Buy" ;
+  rdfs:subClassOf Library:Action ;
+.
+Library:BuyProduct
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Buy ;
+  rdfs:label "Buy product" ;
+  rdfs:range Library:Product ;
+.
+Library:BuyReceipt
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Buy ;
+  rdfs:label "Buy receipt" ;
+  rdfs:range Library:Receipt ;
+.
+Library:BuyStuff
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Buy ;
+  rdfs:label "Buy stuff" ;
+  rdfs:range Library:Stuff ;
+.
+Library:Buy_1
+  a Library:Buy ;
+  Library:ActionClient Library:Client_3 ;
+  Library:BuyProduct Library:Book_4 ;
+  Library:BuyReceipt Library:Receipt_1 ;
+  Library:BuyStuff Library:Stuff_2 ;
+  rdfs:comment "" ;
+  rdfs:label "Buy 1" ;
+.
+Library:Buy_2
+  a Library:Buy ;
+  Library:ActionClient Library:Client_4 ;
+  Library:BuyProduct Library:Book_5 ;
+  Library:BuyReceipt Library:Receipt_2 ;
+  Library:BuyStuff Library:Stuff_2 ;
+  rdfs:comment "" ;
+  rdfs:label "Buy 2" ;
+.
+Library:Buy_3
+  a Library:Buy ;
+  Library:ActionClient Library:Client_1 ;
+  Library:BuyProduct Library:Book_5 ;
+  Library:BuyReceipt Library:Receipt_3 ;
+  Library:BuyStuff Library:Stuff_1 ;
+  rdfs:comment "" ;
+  rdfs:label "Buy 3" ;
+.
+Library:Camera
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Camera" ;
+  rdfs:subClassOf Library:Security ;
+.
+Library:CameraId
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Camera ;
+  rdfs:label "Camera id" ;
+  rdfs:range xsd:integer ;
+.
+Library:Camera_1
+  a Library:Camera ;
+  Library:CameraId 1 ;
+  rdfs:comment "" ;
+  rdfs:label "Camera 1" ;
+.
+Library:Camera_2
+  a Library:Camera ;
+  Library:CameraId 2 ;
+  rdfs:comment "" ;
+  rdfs:label "Camera 2" ;
+.
+Library:Camera_3
+  a Library:Camera ;
+  Library:CameraId 3 ;
+  rdfs:comment "" ;
+  rdfs:label "Camera 3" ;
+.
+Library:Camera_4
+  a Library:Camera ;
+  Library:CameraId 4 ;
+  rdfs:comment "" ;
+  rdfs:label "Camera 4" ;
+.
+Library:Client
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Client" ;
+  rdfs:subClassOf Library:Person ;
+.
+Library:Client_1
+  a Library:Client ;
+  Library:PersonAge 20 ;
+  Library:PersonId 11 ;
+  Library:PersonName "Client 1" ;
+  rdfs:comment "" ;
+  rdfs:label "Client 1" ;
+.
+Library:Client_2
+  a Library:Client ;
+  Library:PersonAge 50 ;
+  Library:PersonId 12 ;
+  Library:PersonName "Client  12" ;
+  rdfs:comment "" ;
+  rdfs:label "Client 2" ;
+.
+Library:Client_3
+  a Library:Client ;
+  Library:PersonAge 40 ;
+  Library:PersonId 13 ;
+  Library:PersonName "Client 3" ;
+  rdfs:comment "" ;
+  rdfs:label "Client 3" ;
+.
+Library:Client_4
+  a Library:Client ;
+  Library:PersonAge 29 ;
+  Library:PersonId 14 ;
+  Library:PersonName "Client 4" ;
+  rdfs:comment "" ;
+  rdfs:label "Client 4" ;
+.
+Library:Client_5
+  a Library:Client ;
+  Library:PersonAge 25 ;
+  Library:PersonId 15 ;
+  Library:PersonName "Client 5" ;
+  rdfs:comment "" ;
+  rdfs:label "Client 5" ;
+.
+Library:ClubJoin
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Club join" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:ClubJoinClub
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:ClubJoin ;
+  rdfs:label "Club join club" ;
+  rdfs:range Library:Clubs ;
+.
+Library:ClubJoinPerson
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:ClubJoin ;
+  rdfs:label "Club join person" ;
+  rdfs:range Library:Person ;
+.
+Library:ClubJoin_1
+  a Library:ClubJoin ;
+  Library:ClubJoinClub Library:Clubs_2 ;
+  Library:ClubJoinPerson Library:Client_3 ;
+  rdfs:comment "" ;
+  rdfs:label "Club join 1" ;
+.
+Library:ClubJoin_2
+  a Library:ClubJoin ;
+  Library:ClubJoinClub Library:Clubs_1 ;
+  Library:ClubJoinPerson Library:Client_2 ;
+  rdfs:comment "" ;
+  rdfs:label "Club join 2" ;
+.
+Library:ClubJoin_3
+  a Library:ClubJoin ;
+  Library:ClubJoinClub Library:Clubs_1 ;
+  Library:ClubJoinPerson Library:Client_4 ;
+  rdfs:comment "" ;
+  rdfs:label "Club join 3" ;
+.
+Library:ClubJoin_4
+  a Library:ClubJoin ;
+  Library:ClubJoinClub Library:Clubs_2 ;
+  Library:ClubJoinPerson Library:Client_5 ;
+  rdfs:comment "" ;
+  rdfs:label "Club join 4" ;
+.
+Library:ClubJoin_5
+  a Library:ClubJoin ;
+  Library:ClubJoinClub Library:Clubs_1 ;
+  Library:ClubJoinPerson Library:Client_1 ;
+  rdfs:comment "" ;
+  rdfs:label "Club join 5" ;
+.
+Library:ClubType
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Clubs ;
+  rdfs:label "Club type" ;
+  rdfs:range xsd:string ;
+.
+Library:Clubs
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Clubs" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:Clubs_1
+  a Library:Clubs ;
+  Library:ClubType "Thoughts" ;
+  rdfs:comment "" ;
+  rdfs:label "Clubs 1" ;
+.
+Library:Clubs_2
+  a Library:Clubs ;
+  Library:ClubType "Reading" ;
+  rdfs:comment "" ;
+  rdfs:label "Clubs 2" ;
+.
+Library:Communication
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Communication" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:CommunicationEmail
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Communication ;
+  rdfs:label "Communication email" ;
+  rdfs:range xsd:string ;
+.
+Library:CommunicationPhone
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Communication ;
+  rdfs:label "Communication phone" ;
+  rdfs:range xsd:string ;
+.
+Library:Communication_1
+  a Library:Communication ;
+  Library:CommunicationEmail "email 1" ;
+  Library:CommunicationPhone "phone 1" ;
+  rdfs:comment "" ;
+  rdfs:label "Communication 1" ;
+.
+Library:Communication_2
+  a Library:Communication ;
+  Library:CommunicationEmail "email 2" ;
+  Library:CommunicationPhone "phone 2" ;
+  rdfs:comment "" ;
+  rdfs:label "Communication 2" ;
+.
+Library:Communication_3
+  a Library:Communication ;
+  Library:CommunicationEmail "email 3" ;
+  Library:CommunicationPhone "phone 3" ;
+  rdfs:comment "" ;
+  rdfs:label "Communication 3" ;
+.
+Library:Communication_4
+  a Library:Communication ;
+  Library:CommunicationEmail "email 4" ;
+  Library:CommunicationPhone "phone 4" ;
+  rdfs:comment "" ;
+  rdfs:label "Communication 4" ;
+.
+Library:Donation
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Donation" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:DonationAmount
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Donation ;
+  rdfs:label "Donation amount" ;
+  rdfs:range xsd:integer ;
+.
+Library:DonationPerson
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Donation ;
+  rdfs:label "Donation person" ;
+  rdfs:range Library:Person ;
+.
+Library:Donation_1
+  a Library:Donation ;
+  Library:DonationAmount 1000 ;
+  Library:DonationPerson Library:Author_3 ;
+  rdfs:comment "" ;
+  rdfs:label "Donation 1" ;
+.
+Library:Games
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Games" ;
+  rdfs:subClassOf Library:Programs ;
+.
+Library:Guard
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Guard" ;
+  rdfs:subClassOf Library:Security ;
+.
+Library:GuardIs
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Guard ;
+  rdfs:label "Guard is" ;
+  rdfs:range Library:Stuff ;
+.
+Library:Guard_3
+  a Library:Guard ;
+  Library:GuardIs Library:Stuff_3 ;
+  rdfs:comment "" ;
+  rdfs:label "Guard 3" ;
+.
+Library:HasBorrowingCard
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Has borrow card" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:HasBorrowingCardCard
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:HasBorrowingCard ;
+  rdfs:label "Has borrowing card card" ;
+  rdfs:range Library:BorrowingCard ;
+.
+Library:HasBorrowingCardClient
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:HasBorrowingCard ;
+  rdfs:label "Has borrowing card client" ;
+  rdfs:range Library:Client ;
+.
+Library:HasBorrowingCard_1
+  a Library:HasBorrowingCard ;
+  Library:HasBorrowingCardCard Library:BorrowingCard_1 ;
+  Library:HasBorrowingCardClient Library:Client_1 ;
+  rdfs:comment "" ;
+  rdfs:label "Has borrowing card 1" ;
+.
+Library:HasBorrowingCard_2
+  a Library:HasBorrowingCard ;
+  Library:HasBorrowingCardCard Library:BorrowingCard_2 ;
+  Library:HasBorrowingCardClient Library:Client_2 ;
+  rdfs:comment "" ;
+  rdfs:label "Has borrowing card 2" ;
+.
+Library:HasBorrowingCard_3
+  a Library:HasBorrowingCard ;
+  Library:HasBorrowingCardCard Library:BorrowingCard_3 ;
+  Library:HasBorrowingCardClient Library:Client_3 ;
+  rdfs:comment "" ;
+  rdfs:label "Has borrowing card 3" ;
+.
+Library:Location
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Location" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:LocationAddress
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Location ;
+  rdfs:label "Location address" ;
+  rdfs:range xsd:string ;
+.
+Library:LocationCity
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Location ;
+  rdfs:label "Location city" ;
+  rdfs:range xsd:string ;
+  rdfs:subPropertyOf Library:LocationAddress ;
+.
+Library:LocationZipCode
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Location ;
+  rdfs:label "Location zip code" ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf Library:LocationAddress ;
+.
+Library:Location_1
+  a Library:Location ;
+  Library:LocationAddress "Address 1" ;
+  Library:LocationCity "Thessaloniki" ;
+  Library:LocationZipCode 54626 ;
+  rdfs:label "Location 1" ;
+.
+Library:Location_2
+  a Library:Location ;
+  Library:LocationAddress "Address 2" ;
+  Library:LocationCity "Thessaloniki" ;
+  Library:LocationZipCode 54453 ;
+  rdfs:comment "" ;
+  rdfs:label "Location 2" ;
+.
+Library:Location_3
+  a Library:Location ;
+  Library:LocationAddress "Address 3" ;
+  Library:LocationCity "Athens" ;
+  Library:LocationZipCode 10431 ;
+  rdfs:comment "" ;
+  rdfs:label "Location 3" ;
+.
+Library:Location_4
+  a Library:Location ;
+  Library:LocationAddress "Address 4" ;
+  Library:LocationCity "Athens" ;
+  Library:LocationZipCode 10436 ;
+  rdfs:comment "" ;
+  rdfs:label "Location 4" ;
+.
+Library:Location_5
+  a Library:Location ;
+  Library:LocationAddress "Address 5" ;
+  Library:LocationCity "Thessaloniki" ;
+  Library:LocationZipCode 54246 ;
+  rdfs:comment "" ;
+  rdfs:label "Location 5" ;
+.
+Library:Location_6
+  a Library:Location ;
+  Library:LocationAddress "Address 6" ;
+  Library:LocationCity "Athens" ;
+  Library:LocationZipCode 10432 ;
+  rdfs:comment "" ;
+  rdfs:label "Location 6" ;
+.
+Library:Organization
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Organization" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:OrganizationArrive
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Organization ;
+  rdfs:label "Organization arrive" ;
+  rdfs:range xsd:date ;
+.
+Library:OrganizationContent
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Organization ;
+  rdfs:label "Organization content" ;
+  rdfs:range xsd:string ;
+.
+Library:OrganizationLeave
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Organization ;
+  rdfs:label "Organization leave" ;
+  rdfs:range xsd:date ;
+.
+Library:Pc
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Pc" ;
+  rdfs:subClassOf Library:Technology ;
+.
+Library:Pc_1
+  a Library:Pc ;
+  Library:TechnologyAvailable true ;
+  rdfs:comment "" ;
+  rdfs:label "Pc 1" ;
+.
+Library:Pc_2
+  a Library:Pc ;
+  Library:TechnologyAvailable false ;
+  rdfs:comment "" ;
+  rdfs:label "Pc 2" ;
+.
+Library:Pc_3
+  a Library:Pc ;
+  Library:TechnologyAvailable true ;
+  rdfs:comment "" ;
+  rdfs:label "Pc 3" ;
+.
+Library:Person
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Person" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:PersonAge
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Person ;
+  rdfs:label "Person age" ;
+  rdfs:range xsd:integer ;
+.
+Library:PersonId
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Person ;
+  rdfs:label "Person id" ;
+  rdfs:range xsd:integer ;
+.
+Library:PersonName
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Person ;
+  rdfs:label "Person name" ;
+  rdfs:range xsd:string ;
+.
+Library:Printer
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Printer" ;
+  rdfs:subClassOf Library:Technology ;
+.
+Library:Printer_1
+  a Library:Printer ;
+  Library:TechnologyAvailable true ;
+  rdfs:comment "" ;
+  rdfs:label "Printer 1" ;
+.
+Library:Printer_2
+  a Library:Printer ;
+  Library:TechnologyAvailable true ;
+  rdfs:comment "" ;
+  rdfs:label "Printer 2" ;
+.
+Library:Printer_3
+  a Library:Printer ;
+  Library:TechnologyAvailable true ;
+  rdfs:comment "" ;
+  rdfs:label "Printer 3" ;
+.
+Library:Printer_4
+  a Library:Printer ;
+  Library:TechnologyAvailable true ;
+  rdfs:comment "" ;
+  rdfs:label "Printer 4" ;
+.
+Library:Printer_5
+  a Library:Printer ;
+  Library:TechnologyAvailable false ;
+  rdfs:comment "" ;
+  rdfs:label "Printer 5" ;
+.
+Library:Printer_6
+  a Library:Printer ;
+  Library:TechnologyAvailable false ;
+  rdfs:comment "" ;
+  rdfs:label "Printer 6" ;
+.
+Library:Printer_7
+  a Library:Printer ;
+  Library:TechnologyAvailable false ;
+  rdfs:comment "" ;
+  rdfs:label "Printer 7" ;
+.
+Library:Product
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Product" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:ProductName
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Product ;
+  rdfs:label "Product name" ;
+  rdfs:range xsd:string ;
+.
+Library:ProductValue
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Product ;
+  rdfs:label "Product value" ;
+  rdfs:range xsd:decimal ;
+.
+Library:Product_1
+  a Library:Product ;
+  Library:ProductName "Pen" ;
+  Library:ProductValue 1.2 ;
+  Library:SupplierTypeQuantity 100 ;
+  rdfs:comment "" ;
+  rdfs:label "Product 1" ;
+.
+Library:Product_2
+  a Library:Product ;
+  Library:ProductName "Pencil" ;
+  Library:ProductValue "1"^^xsd:decimal ;
+  Library:SupplierTypeQuantity 50 ;
+  rdfs:comment "" ;
+  rdfs:label "Product 2" ;
+.
+Library:Product_3
+  a Library:Product ;
+  Library:ProductName "notebook" ;
+  Library:ProductValue "5"^^xsd:decimal ;
+  Library:SupplierTypeQuantity 25 ;
+  rdfs:comment "" ;
+  rdfs:label "Product 3" ;
+.
+Library:Programs
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Programs" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:Publisher
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Publisher" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:PublisherId
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Publisher ;
+  rdfs:label "Publisher id" ;
+  rdfs:range xsd:integer ;
+.
+Library:PublisherLocation
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Publisher ;
+  rdfs:label "Publisher location" ;
+  rdfs:range Library:Location ;
+.
+Library:PublisherName
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:label "Publisher name" ;
+  rdfs:range xsd:string ;
+.
+Library:Publisher_1
+  a Library:Publisher ;
+  Library:PublisherId 1 ;
+  Library:PublisherLocation Library:Location_1 ;
+  rdfs:comment "" ;
+  rdfs:label "Publisher 1" ;
+.
+Library:Publisher_2
+  a Library:Publisher ;
+  Library:PublisherId 2 ;
+  Library:PublisherLocation Library:Location_3 ;
+  rdfs:comment "" ;
+  rdfs:label "Publisher 2" ;
+.
+Library:Read
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Read" ;
+  rdfs:subClassOf Library:Action ;
+.
+Library:ReadBook
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Read ;
+  rdfs:label "Read book" ;
+  rdfs:range Library:Book ;
+.
+Library:Read_1
+  a Library:Read ;
+  Library:ActionClient Library:Client_4 ;
+  Library:ReadBook Library:Book_1 ;
+  rdfs:comment "" ;
+  rdfs:label "Read 1" ;
+.
+Library:Receipt
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Receipt" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:Receipt_1
+  a Library:Receipt ;
+  rdfs:comment "" ;
+  rdfs:label "Receipt 1" ;
+.
+Library:Receipt_2
+  a Library:Receipt ;
+  rdfs:comment "" ;
+  rdfs:label "Receipt 2" ;
+.
+Library:Receipt_3
+  a Library:Receipt ;
+  rdfs:comment "" ;
+  rdfs:label "Receipt 3" ;
+.
+Library:Salary
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Salary" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:SalaryAmount
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Salary ;
+  rdfs:label "Salary amount" ;
+  rdfs:range xsd:integer ;
+.
+Library:SalaryStuff
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Salary ;
+  rdfs:label "Salary stuff" ;
+  rdfs:range Library:Stuff ;
+.
+Library:Salary_1
+  a Library:Salary ;
+  Library:SalaryAmount 700 ;
+  Library:SalaryStuff Library:Stuff_1 ;
+  rdfs:comment "" ;
+  rdfs:label "Salary 1" ;
+.
+Library:Salary_2
+  a Library:Salary ;
+  Library:SalaryAmount 700 ;
+  Library:SalaryStuff Library:Stuff_2 ;
+  rdfs:comment "" ;
+  rdfs:label "Salary 2" ;
+.
+Library:Salary_3
+  a Library:Salary ;
+  Library:SalaryAmount 800 ;
+  Library:SalaryStuff Library:Stuff_3 ;
+  rdfs:comment "" ;
+  rdfs:label "Salary 3" ;
+.
+Library:Schedule
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Schedule" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:ScheduleStuff
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Schedule ;
+  rdfs:label "Schedule stuff" ;
+  rdfs:range Library:Stuff ;
+.
+Library:ScheduleTime
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Schedule ;
+  rdfs:label "Schedule time" ;
+  rdfs:range xsd:string ;
+.
+Library:Schedule_1
+  a Library:Schedule ;
+  Library:ScheduleStuff Library:Stuff_1 ;
+  Library:ScheduleTime "Morning" ;
+  rdfs:comment "" ;
+  rdfs:label "Schedule 1" ;
+.
+Library:Schedule_2
+  a Library:Schedule ;
+  Library:ScheduleStuff Library:Stuff_2 ;
+  Library:ScheduleTime "Afternoon" ;
+  rdfs:comment "" ;
+  rdfs:label "Schedule 2" ;
+.
+Library:Schedule_3
+  a Library:Schedule ;
+  Library:ScheduleStuff Library:Stuff_3 ;
+  Library:ScheduleTime "night" ;
+  rdfs:comment "" ;
+  rdfs:label "Schedule 3" ;
+.
+Library:Security
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Security" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:Store
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Store" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:StoreCommunication
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Store ;
+  rdfs:label "Store communication" ;
+  rdfs:range Library:Communication ;
+.
+Library:StoreLocation
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Store ;
+  rdfs:label "Store location" ;
+  rdfs:range Library:Location ;
+.
+Library:Store_1
+  a Library:Store ;
+  Library:StoreCommunication Library:Communication_4 ;
+  Library:StoreLocation Library:Location_5 ;
+  rdfs:comment "" ;
+  rdfs:label "Store 1" ;
+.
+Library:Store_2
+  a Library:Store ;
+  Library:StoreCommunication Library:Communication_3 ;
+  Library:StoreLocation Library:Location_6 ;
+  rdfs:comment "" ;
+  rdfs:label "Store 2" ;
+.
+Library:Stuff
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Stuff" ;
+  rdfs:subClassOf Library:Person ;
+.
+Library:Stuff_1
+  a Library:Stuff ;
+  Library:PersonAge 30 ;
+  Library:PersonId 1 ;
+  Library:PersonName "Stuff 1" ;
+  rdfs:comment "" ;
+  rdfs:label "Stuff 1" ;
+.
+Library:Stuff_2
+  a Library:Stuff ;
+  Library:PersonAge 22 ;
+  Library:PersonId 2 ;
+  Library:PersonName "Stuff 2" ;
+  rdfs:comment "" ;
+  rdfs:label "Stuff 2" ;
+.
+Library:Stuff_3
+  a Library:Stuff ;
+  Library:PersonAge 20 ;
+  Library:PersonId 3 ;
+  Library:PersonName "Stuff 3" ;
+  rdfs:comment "" ;
+  rdfs:label "Stuff 3" ;
+.
+Library:Supplier
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Supplier" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:SupplierName
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Supplier ;
+  rdfs:label "Supplier name" ;
+  rdfs:range xsd:string ;
+.
+Library:SupplierType
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Supplier ;
+  rdfs:label "Supplier type" ;
+  rdfs:range xsd:string ;
+.
+Library:SupplierTypeQuantity
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Product ;
+  rdfs:label "Supplier type quantity" ;
+  rdfs:range xsd:integer ;
+  rdfs:subPropertyOf Library:SupplierType ;
+.
+Library:Supplier_1
+  a Library:Supplier ;
+  Library:SupplierName "Supplier 1" ;
+  Library:SupplierType "Books" ;
+  rdfs:comment "" ;
+  rdfs:label "Supplier 1" ;
+.
+Library:Supplier_2
+  a Library:Supplier ;
+  Library:SupplierName "Supplier 2" ;
+  Library:SupplierType "stationery" ;
+  rdfs:comment "" ;
+  rdfs:label "Supplier 2" ;
+.
+Library:Technology
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Technology" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:TechnologyAvailable
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Technology ;
+  rdfs:label "Technology available" ;
+  rdfs:range xsd:boolean ;
+.
+Library:Warehouse
+  a rdfs:Class ;
+  rdfs:comment "" ;
+  rdfs:label "Warehouse" ;
+  rdfs:subClassOf rdfs:Resource ;
+.
+Library:WarehouseCommunication
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Warehouse ;
+  rdfs:label "Warehouse communication" ;
+  rdfs:range Library:Communication ;
+.
+Library:WarehouseLocation
+  a rdf:Property ;
+  rdfs:comment "" ;
+  rdfs:domain Library:Warehouse ;
+  rdfs:label "Warehouse location" ;
+  rdfs:range Library:Location ;
+.
+Library:Warehouse_1
+  a Library:Warehouse ;
+  Library:WarehouseCommunication Library:Communication_2 ;
+  Library:WarehouseLocation Library:Location_2 ;
+  rdfs:comment "" ;
+  rdfs:label "Warehouse 1" ;
+.
+Library:Warehouse_2
+  a Library:Warehouse ;
+  Library:WarehouseCommunication Library:Communication_1 ;
+  Library:WarehouseLocation Library:Location_4 ;
+  rdfs:comment "" ;
+  rdfs:label "Warehouse 2" ;
+.

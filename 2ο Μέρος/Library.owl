@@ -1,0 +1,2716 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://temp1/Library#"
+     xml:base="http://temp1/Library"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:spin="http://spinrdf.org/spin#"
+     xmlns:Library="http://temp1/Library#">
+    <owl:Ontology rdf:about="http://temp1/Library">
+        <spin:imports rdf:resource="http://topbraid.org/spin/rdfsplus"/>
+        <owl:versionInfo>Created with TopBraid Composer</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://spinrdf.org/spin#imports -->
+
+    <owl:AnnotationProperty rdf:about="http://spinrdf.org/spin#imports"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#integer -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#integer">
+        <owl:equivalentClass rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://temp1/Library#ActionClient -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#ActionClient">
+        <rdfs:domain rdf:resource="http://temp1/Library#Action"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Client"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Borrow client</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#BookAuthor -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#BookAuthor">
+        <owl:inverseOf rdf:resource="http://temp1/Library#author_write"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Book"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Author"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Book author</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#BookPublisher -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#BookPublisher">
+        <owl:inverseOf rdf:resource="http://temp1/Library#publish_book"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Book"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Publisher"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Book publisher</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#BorrowBook -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#BorrowBook">
+        <rdfs:domain rdf:resource="http://temp1/Library#Borrow"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Book"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Borrow book</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#BorrowStuff -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#BorrowStuff">
+        <rdfs:domain rdf:resource="http://temp1/Library#Borrow"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Stuff"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Borrow stuff</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#Branch_store_of -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#Branch_store_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Store"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Store"/>
+        <rdfs:label>Substore Of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#BuyProduct -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#BuyProduct">
+        <rdfs:domain rdf:resource="http://temp1/Library#Buy"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Product"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Buy product</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#BuyReceipt -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#BuyReceipt">
+        <rdfs:domain rdf:resource="http://temp1/Library#Buy"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Receipt"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Buy receipt</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#BuyStuff -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#BuyStuff">
+        <rdfs:domain rdf:resource="http://temp1/Library#Buy"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Stuff"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Buy stuff</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#ClubJoinClub -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#ClubJoinClub">
+        <rdfs:domain rdf:resource="http://temp1/Library#ClubJoin"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Clubs"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Club join club</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#ClubJoinPerson -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#ClubJoinPerson">
+        <rdfs:domain rdf:resource="http://temp1/Library#ClubJoin"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Person"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Club join person</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#DonationPerson -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#DonationPerson">
+        <rdfs:domain rdf:resource="http://temp1/Library#Donation"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Person"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Donation person</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#GuardIs -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#GuardIs">
+        <rdfs:domain rdf:resource="http://temp1/Library#Guard"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Stuff"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Guard is</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#HasBorrowingCardCard -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#HasBorrowingCardCard">
+        <rdfs:domain rdf:resource="http://temp1/Library#HasBorrowingCard"/>
+        <rdfs:range rdf:resource="http://temp1/Library#BorrowingCard"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Has borrowing card card</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#HasBorrowingCardClient -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#HasBorrowingCardClient">
+        <rdfs:domain rdf:resource="http://temp1/Library#HasBorrowingCard"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Client"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Has borrowing card client</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#Has_Salary -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#Has_Salary">
+        <owl:inverseOf rdf:resource="http://temp1/Library#SalaryStuff"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Stuff"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Salary"/>
+        <rdfs:label>Has Salary</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#Has_Schedule -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#Has_Schedule">
+        <owl:inverseOf rdf:resource="http://temp1/Library#ScheduleStuff"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Stuff"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Schedule"/>
+        <rdfs:label>Has Schedule</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#PublisherLocation -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#PublisherLocation">
+        <rdfs:domain rdf:resource="http://temp1/Library#Publisher"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Location"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Publisher location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#ReadBook -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#ReadBook">
+        <rdfs:domain rdf:resource="http://temp1/Library#Read"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Book"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Read book</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#SalaryStuff -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#SalaryStuff">
+        <rdfs:domain rdf:resource="http://temp1/Library#Salary"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Stuff"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Salary stuff</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#Same_Rank -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#Same_Rank">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Stuff"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Stuff"/>
+        <rdfs:label>Has Same Rank With</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#Same_Salary -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#Same_Salary">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Stuff"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Stuff"/>
+        <rdfs:label>Has Same Salary With</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#ScheduleStuff -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#ScheduleStuff">
+        <rdfs:domain rdf:resource="http://temp1/Library#Schedule"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Stuff"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Schedule stuff</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#StoreCommunication -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#StoreCommunication">
+        <rdfs:domain rdf:resource="http://temp1/Library#Store"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Communication"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Store communication</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#StoreLocation -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#StoreLocation">
+        <rdfs:domain rdf:resource="http://temp1/Library#Store"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Location"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Store location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#WarehouseCommunication -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#WarehouseCommunication">
+        <rdfs:domain rdf:resource="http://temp1/Library#Warehouse"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Communication"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Warehouse communication</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#WarehouseLocation -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#WarehouseLocation">
+        <rdfs:domain rdf:resource="http://temp1/Library#Warehouse"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Location"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Warehouse location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#Working_With -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#Working_With">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Stuff"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Stuff"/>
+        <rdfs:comment>working at the same time</rdfs:comment>
+        <rdfs:label>Working With</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#author_write -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#author_write">
+        <rdfs:domain rdf:resource="http://temp1/Library#Author"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Book"/>
+        <rdfs:label>Author Write</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#hasRank -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#hasRank">
+        <rdfs:domain rdf:resource="http://temp1/Library#Stuff"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Rank"/>
+        <rdfs:label>Has Rank</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#has_cooperate -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#has_cooperate">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Author"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Author"/>
+        <rdfs:label>Has Cooperate</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#has_warehouse -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#has_warehouse">
+        <owl:inverseOf rdf:resource="http://temp1/Library#warehouse_of"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Store"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Warehouse"/>
+        <rdfs:label>Has Warehouse</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#oversees -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#oversees">
+        <owl:inverseOf rdf:resource="http://temp1/Library#sees_by"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Rank"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Rank"/>
+        <rdfs:label>Oversees</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#publish_book -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#publish_book">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Publisher"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Book"/>
+        <rdfs:label>Publish Book</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#sees_by -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#sees_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Rank"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Rank"/>
+        <rdfs:label>Sees By</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://temp1/Library#warehouse_of -->
+
+    <owl:ObjectProperty rdf:about="http://temp1/Library#warehouse_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Warehouse"/>
+        <rdfs:range rdf:resource="http://temp1/Library#Store"/>
+        <rdfs:label>Warehouse Of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://temp1/Library#BookCategory -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#BookCategory">
+        <rdfs:domain rdf:resource="http://temp1/Library#Book"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Book category</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#BookReleaseDate -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#BookReleaseDate">
+        <rdfs:domain rdf:resource="http://temp1/Library#Book"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Book release date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#BookTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#BookTitle">
+        <rdfs:domain rdf:resource="http://temp1/Library#Book"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Book title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#BorrowEnd -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#BorrowEnd">
+        <rdfs:domain rdf:resource="http://temp1/Library#Borrow"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Borrow end</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#BorrowStart -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#BorrowStart">
+        <rdfs:domain rdf:resource="http://temp1/Library#Borrow"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Borrow start</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#BorrowingCardId -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#BorrowingCardId">
+        <rdfs:domain rdf:resource="http://temp1/Library#BorrowingCard"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#BorrowingCardUntil -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#BorrowingCardUntil">
+        <rdfs:domain rdf:resource="http://temp1/Library#BorrowingCard"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Borrowing card until</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#CameraId -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#CameraId">
+        <rdfs:domain rdf:resource="http://temp1/Library#Camera"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Camera id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#ClubType -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#ClubType">
+        <rdfs:domain rdf:resource="http://temp1/Library#Clubs"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Club type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#CommunicationEmail -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#CommunicationEmail">
+        <rdfs:domain rdf:resource="http://temp1/Library#Communication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Communication email</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#CommunicationPhone -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#CommunicationPhone">
+        <rdfs:domain rdf:resource="http://temp1/Library#Communication"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Communication phone</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#DonationAmount -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#DonationAmount">
+        <rdfs:domain rdf:resource="http://temp1/Library#Donation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Donation amount</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#LocationAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#LocationAddress">
+        <rdfs:domain rdf:resource="http://temp1/Library#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Location address</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#LocationCity -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#LocationCity">
+        <rdfs:subPropertyOf rdf:resource="http://temp1/Library#LocationAddress"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Location city</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#LocationZipCode -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#LocationZipCode">
+        <rdfs:subPropertyOf rdf:resource="http://temp1/Library#LocationAddress"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Location zip code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#Manager_Is -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#Manager_Is">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#Rank_name"/>
+                <owl:hasValue>Rank_4</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label>Manager Is</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#OrganizationArrive -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#OrganizationArrive">
+        <rdfs:domain rdf:resource="http://temp1/Library#Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Organization arrive</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#OrganizationContent -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#OrganizationContent">
+        <rdfs:domain rdf:resource="http://temp1/Library#Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Organization content</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#OrganizationLeave -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#OrganizationLeave">
+        <rdfs:domain rdf:resource="http://temp1/Library#Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Organization leave</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#PersonAge -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#PersonAge">
+        <rdfs:domain rdf:resource="http://temp1/Library#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Person age</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#PersonId -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#PersonId">
+        <rdfs:domain rdf:resource="http://temp1/Library#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Person id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#PersonName -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#PersonName">
+        <rdfs:domain rdf:resource="http://temp1/Library#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Person name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#ProductName -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#ProductName">
+        <rdfs:domain rdf:resource="http://temp1/Library#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Product name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#ProductValue -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#ProductValue">
+        <rdfs:domain rdf:resource="http://temp1/Library#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Product value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#Product_quantity -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#Product_quantity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Product"/>
+        <rdfs:label>Product Quantity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#PublisherId -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#PublisherId">
+        <rdfs:domain rdf:resource="http://temp1/Library#Publisher"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Publisher id</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#PublisherName -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#PublisherName">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Publisher name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#Rank_name -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#Rank_name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://temp1/Library#Rank"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>Rank Name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#SalaryAmount -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#SalaryAmount">
+        <rdfs:domain rdf:resource="http://temp1/Library#Salary"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Salary amount</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#ScheduleTime -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#ScheduleTime">
+        <rdfs:domain rdf:resource="http://temp1/Library#Schedule"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Schedule time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#SupplierName -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#SupplierName">
+        <rdfs:domain rdf:resource="http://temp1/Library#Supplier"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Supplier name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#SupplierType -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#SupplierType">
+        <rdfs:domain rdf:resource="http://temp1/Library#Supplier"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Supplier type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://temp1/Library#TechnologyAvailable -->
+
+    <owl:DatatypeProperty rdf:about="http://temp1/Library#TechnologyAvailable">
+        <rdfs:domain rdf:resource="http://temp1/Library#Technology"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Technology available</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://temp1/Library#Action -->
+
+    <owl:Class rdf:about="http://temp1/Library#Action">
+        <owl:disjointWith rdf:resource="http://temp1/Library#ClubJoin"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Adult -->
+
+    <owl:Class rdf:about="http://temp1/Library#Adult">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://temp1/Library#Client"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://temp1/Library#PersonAge"/>
+                        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">18</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Client"/>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#AfterSchoolHomeWorkHelp -->
+
+    <owl:Class rdf:about="http://temp1/Library#AfterSchoolHomeWorkHelp">
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Programs"/>
+        <owl:disjointWith rdf:resource="http://temp1/Library#Games"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>After school home work help</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Author -->
+
+    <owl:Class rdf:about="http://temp1/Library#Author">
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Person"/>
+        <owl:disjointWith rdf:resource="http://temp1/Library#Client"/>
+        <owl:disjointWith rdf:resource="http://temp1/Library#Stuff"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Author</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Book -->
+
+    <owl:Class rdf:about="http://temp1/Library#Book">
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Product"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#BookTitle"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#ProductValue"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Book</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Borrow -->
+
+    <owl:Class rdf:about="http://temp1/Library#Borrow">
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#BorrowBook"/>
+                <owl:someValuesFrom rdf:resource="http://temp1/Library#Book"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Borrow</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#BorrowingCard -->
+
+    <owl:Class rdf:about="http://temp1/Library#BorrowingCard">
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Borrowing card</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Buy -->
+
+    <owl:Class rdf:about="http://temp1/Library#Buy">
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Action"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Buy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Camera -->
+
+    <owl:Class rdf:about="http://temp1/Library#Camera">
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Security"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Camera</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Cheap_Book -->
+
+    <owl:Class rdf:about="http://temp1/Library#Cheap_Book">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#ProductValue"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</xsd:maxExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Book"/>
+        <rdfs:label>Cheap Book</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Client -->
+
+    <owl:Class rdf:about="http://temp1/Library#Client">
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Person"/>
+        <owl:disjointWith rdf:resource="http://temp1/Library#Stuff"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Client</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#ClubJoin -->
+
+    <owl:Class rdf:about="http://temp1/Library#ClubJoin">
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Club join</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Clubs -->
+
+    <owl:Class rdf:about="http://temp1/Library#Clubs">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#ClubType"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://temp1/Library#Organization"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Clubs</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Communication -->
+
+    <owl:Class rdf:about="http://temp1/Library#Communication">
+        <owl:disjointWith rdf:resource="http://temp1/Library#Location"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Communication</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Donation -->
+
+    <owl:Class rdf:about="http://temp1/Library#Donation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#DonationAmount"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://temp1/Library#HasBorrowingCard"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Donation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Expensive_Book -->
+
+    <owl:Class rdf:about="http://temp1/Library#Expensive_Book">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#ProductValue"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</xsd:minExclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Book"/>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Famous_Author -->
+
+    <owl:Class rdf:about="http://temp1/Library#Famous_Author">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://temp1/Library#Author"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://temp1/Library#author_write"/>
+                        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Author"/>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Famous_Publisher -->
+
+    <owl:Class rdf:about="http://temp1/Library#Famous_Publisher">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#publish_book"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://temp1/Library#Book"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Publisher"/>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Games -->
+
+    <owl:Class rdf:about="http://temp1/Library#Games">
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Programs"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Games</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Guard -->
+
+    <owl:Class rdf:about="http://temp1/Library#Guard">
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Security"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Guard</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#HasBorrowingCard -->
+
+    <owl:Class rdf:about="http://temp1/Library#HasBorrowingCard">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#HasBorrowingCardClient"/>
+                <owl:allValuesFrom rdf:resource="http://temp1/Library#Client"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Has borrow card</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Location -->
+
+    <owl:Class rdf:about="http://temp1/Library#Location">
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Location</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Manager -->
+
+    <owl:Class rdf:about="http://temp1/Library#Manager">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://temp1/Library#Stuff"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://temp1/Library#Manager_Is"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Stuff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Night_Worker -->
+
+    <owl:Class rdf:about="http://temp1/Library#Night_Worker">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://temp1/Library#Stuff"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://temp1/Library#ScheduleTime"/>
+                        <owl:hasValue>Night</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Stuff"/>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Organization -->
+
+    <owl:Class rdf:about="http://temp1/Library#Organization">
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Pc -->
+
+    <owl:Class rdf:about="http://temp1/Library#Pc">
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Technology"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Pc</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Person -->
+
+    <owl:Class rdf:about="http://temp1/Library#Person">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#PersonAge"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#PersonName"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://temp1/Library#Product"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Printer -->
+
+    <owl:Class rdf:about="http://temp1/Library#Printer">
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Technology"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Printer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Product -->
+
+    <owl:Class rdf:about="http://temp1/Library#Product">
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Product</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Programs -->
+
+    <owl:Class rdf:about="http://temp1/Library#Programs">
+        <owl:disjointWith rdf:resource="http://temp1/Library#Technology"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://temp1/Library#AfterSchoolHomeWorkHelp"/>
+            <rdf:Description rdf:about="http://temp1/Library#Games"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Programs</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Publisher -->
+
+    <owl:Class rdf:about="http://temp1/Library#Publisher">
+        <owl:disjointWith rdf:resource="http://temp1/Library#Store"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Publisher</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Rank -->
+
+    <owl:Class rdf:about="http://temp1/Library#Rank">
+        <owl:disjointWith rdf:resource="http://temp1/Library#Security"/>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Read -->
+
+    <owl:Class rdf:about="http://temp1/Library#Read">
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Action"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Read</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Receipt -->
+
+    <owl:Class rdf:about="http://temp1/Library#Receipt">
+        <owl:disjointWith rdf:resource="http://temp1/Library#Salary"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Receipt</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Salary -->
+
+    <owl:Class rdf:about="http://temp1/Library#Salary">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#SalaryAmount"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Salary</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Schedule -->
+
+    <owl:Class rdf:about="http://temp1/Library#Schedule">
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Schedule</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Security -->
+
+    <owl:Class rdf:about="http://temp1/Library#Security">
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Security</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Store -->
+
+    <owl:Class rdf:about="http://temp1/Library#Store">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#StoreCommunication"/>
+                <owl:someValuesFrom rdf:resource="http://temp1/Library#Communication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#StoreLocation"/>
+                <owl:allValuesFrom rdf:resource="http://temp1/Library#Location"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Store</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Stuff -->
+
+    <owl:Class rdf:about="http://temp1/Library#Stuff">
+        <rdfs:subClassOf rdf:resource="http://temp1/Library#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#hasRank"/>
+                <owl:someValuesFrom rdf:resource="http://temp1/Library#Stuff"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://temp1/Library#Has_Salary"/>
+                <owl:allValuesFrom rdf:resource="http://temp1/Library#Stuff"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Stuff</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Supplier -->
+
+    <owl:Class rdf:about="http://temp1/Library#Supplier">
+        <owl:disjointWith rdf:resource="http://temp1/Library#Warehouse"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Supplier</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Technology -->
+
+    <owl:Class rdf:about="http://temp1/Library#Technology">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://temp1/Library#Pc"/>
+            <rdf:Description rdf:about="http://temp1/Library#Printer"/>
+        </owl:disjointUnionOf>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Technology</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://temp1/Library#Warehouse -->
+
+    <owl:Class rdf:about="http://temp1/Library#Warehouse">
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Warehouse</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://temp1/Library#Author_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Author_1">
+        <rdf:type rdf:resource="http://temp1/Library#Author"/>
+        <author_write rdf:resource="http://temp1/Library#Book_1"/>
+        <author_write rdf:resource="http://temp1/Library#Book_2"/>
+        <PersonAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</PersonAge>
+        <PersonId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</PersonId>
+        <PersonName>Author 1</PersonName>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Author 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Author_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Author_2">
+        <rdf:type rdf:resource="http://temp1/Library#Author"/>
+        <PersonId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</PersonId>
+        <PersonName>Author 2</PersonName>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Author 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Author_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Author_3">
+        <rdf:type rdf:resource="http://temp1/Library#Author"/>
+        <author_write rdf:resource="http://temp1/Library#Book_3"/>
+        <author_write rdf:resource="http://temp1/Library#Book_4"/>
+        <has_cooperate rdf:resource="http://temp1/Library#Author_4"/>
+        <PersonAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">58</PersonAge>
+        <PersonId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">23</PersonId>
+        <PersonName>Author 3</PersonName>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Author 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Author_4 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Author_4">
+        <rdf:type rdf:resource="http://temp1/Library#Author"/>
+        <author_write rdf:resource="http://temp1/Library#Book_5"/>
+        <has_cooperate rdf:resource="http://temp1/Library#Author_3"/>
+        <PersonAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45</PersonAge>
+        <PersonId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</PersonId>
+        <PersonName>Author 4</PersonName>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Author 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Book_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Book_1">
+        <rdf:type rdf:resource="http://temp1/Library#Book"/>
+        <BookAuthor rdf:resource="http://temp1/Library#Author_1"/>
+        <BookPublisher rdf:resource="http://temp1/Library#Publisher_1"/>
+        <BookCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Psychology</BookCategory>
+        <BookReleaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2015-12-08</BookReleaseDate>
+        <BookTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Title 1</BookTitle>
+        <ProductValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15</ProductValue>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Book 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Book_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Book_2">
+        <rdf:type rdf:resource="http://temp1/Library#Book"/>
+        <BookAuthor rdf:resource="http://temp1/Library#Author_1"/>
+        <BookPublisher rdf:resource="http://temp1/Library#Publisher_1"/>
+        <BookCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Action</BookCategory>
+        <BookReleaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-03-17</BookReleaseDate>
+        <BookTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Title 2</BookTitle>
+        <ProductValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</ProductValue>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Book 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Book_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Book_3">
+        <rdf:type rdf:resource="http://temp1/Library#Book"/>
+        <BookAuthor rdf:resource="http://temp1/Library#Author_3"/>
+        <BookPublisher rdf:resource="http://temp1/Library#Publisher_1"/>
+        <BookCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Poems</BookCategory>
+        <BookCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Title 3</BookCategory>
+        <BookReleaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-10-01</BookReleaseDate>
+        <ProductValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30</ProductValue>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Book 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Book_4 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Book_4">
+        <rdf:type rdf:resource="http://temp1/Library#Book"/>
+        <BookAuthor rdf:resource="http://temp1/Library#Author_3"/>
+        <BookPublisher rdf:resource="http://temp1/Library#Publisher_1"/>
+        <BookCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Psychology</BookCategory>
+        <BookReleaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2017-12-15</BookReleaseDate>
+        <BookTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Title 4</BookTitle>
+        <ProductValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</ProductValue>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Book 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Book_5 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Book_5">
+        <rdf:type rdf:resource="http://temp1/Library#Book"/>
+        <BookAuthor rdf:resource="http://temp1/Library#Author_3"/>
+        <BookAuthor rdf:resource="http://temp1/Library#Author_4"/>
+        <BookPublisher rdf:resource="http://temp1/Library#Publisher_2"/>
+        <BookCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ecology</BookCategory>
+        <BookReleaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2009-03-16</BookReleaseDate>
+        <BookTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Title 5</BookTitle>
+        <ProductValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ProductValue>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Book 5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Book_6 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Book_6">
+        <rdf:type rdf:resource="http://temp1/Library#Book"/>
+        <BookAuthor rdf:resource="http://temp1/Library#Author_3"/>
+        <BookAuthor rdf:resource="http://temp1/Library#Author_4"/>
+        <BookPublisher rdf:resource="http://temp1/Library#Publisher_2"/>
+        <BookCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ecology</BookCategory>
+        <BookReleaseDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020-03-16</BookReleaseDate>
+        <BookTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Book 5.1</BookTitle>
+        <ProductValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</ProductValue>
+        <rdfs:label>Book 6</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Borrow_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Borrow_1">
+        <rdf:type rdf:resource="http://temp1/Library#Borrow"/>
+        <ActionClient rdf:resource="http://temp1/Library#Client_1"/>
+        <BorrowBook rdf:resource="http://temp1/Library#Book_1"/>
+        <BorrowStuff rdf:resource="http://temp1/Library#Stuff_1"/>
+        <BorrowEnd rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-12-22</BorrowEnd>
+        <BorrowStart rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-23</BorrowStart>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Borrow 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Borrow_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Borrow_2">
+        <rdf:type rdf:resource="http://temp1/Library#Borrow"/>
+        <ActionClient rdf:resource="http://temp1/Library#Client_1"/>
+        <BorrowBook rdf:resource="http://temp1/Library#Book_2"/>
+        <BorrowStuff rdf:resource="http://temp1/Library#Stuff_1"/>
+        <BorrowEnd rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-12-31</BorrowEnd>
+        <BorrowStart rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-12-07</BorrowStart>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Borrow 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Borrow_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Borrow_3">
+        <rdf:type rdf:resource="http://temp1/Library#Borrow"/>
+        <ActionClient rdf:resource="http://temp1/Library#Client_2"/>
+        <BorrowBook rdf:resource="http://temp1/Library#Book_5"/>
+        <BorrowStuff rdf:resource="http://temp1/Library#Stuff_2"/>
+        <BorrowEnd rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-12-30</BorrowEnd>
+        <BorrowStart rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-07</BorrowStart>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Borrow 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#BorrowingCard_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#BorrowingCard_1">
+        <rdf:type rdf:resource="http://temp1/Library#BorrowingCard"/>
+        <BorrowingCardId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</BorrowingCardId>
+        <BorrowingCardUntil rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-31</BorrowingCardUntil>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Borrowing card 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#BorrowingCard_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#BorrowingCard_2">
+        <rdf:type rdf:resource="http://temp1/Library#BorrowingCard"/>
+        <BorrowingCardId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</BorrowingCardId>
+        <BorrowingCardUntil rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-12-31</BorrowingCardUntil>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Borrowing card 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#BorrowingCard_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#BorrowingCard_3">
+        <rdf:type rdf:resource="http://temp1/Library#BorrowingCard"/>
+        <BorrowingCardId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</BorrowingCardId>
+        <BorrowingCardUntil rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-31</BorrowingCardUntil>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Borrowing card 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Buy_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Buy_1">
+        <rdf:type rdf:resource="http://temp1/Library#Buy"/>
+        <ActionClient rdf:resource="http://temp1/Library#Client_3"/>
+        <BuyProduct rdf:resource="http://temp1/Library#Book_4"/>
+        <BuyReceipt rdf:resource="http://temp1/Library#Receipt_1"/>
+        <BuyStuff rdf:resource="http://temp1/Library#Stuff_2"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Buy 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Buy_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Buy_2">
+        <rdf:type rdf:resource="http://temp1/Library#Buy"/>
+        <ActionClient rdf:resource="http://temp1/Library#Client_4"/>
+        <BuyProduct rdf:resource="http://temp1/Library#Book_5"/>
+        <BuyReceipt rdf:resource="http://temp1/Library#Receipt_2"/>
+        <BuyStuff rdf:resource="http://temp1/Library#Stuff_2"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Buy 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Buy_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Buy_3">
+        <rdf:type rdf:resource="http://temp1/Library#Buy"/>
+        <ActionClient rdf:resource="http://temp1/Library#Client_1"/>
+        <BuyProduct rdf:resource="http://temp1/Library#Book_5"/>
+        <BuyReceipt rdf:resource="http://temp1/Library#Receipt_3"/>
+        <BuyStuff rdf:resource="http://temp1/Library#Stuff_1"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Buy 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Camera_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Camera_1">
+        <rdf:type rdf:resource="http://temp1/Library#Camera"/>
+        <CameraId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</CameraId>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Camera 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Camera_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Camera_2">
+        <rdf:type rdf:resource="http://temp1/Library#Camera"/>
+        <CameraId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</CameraId>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Camera 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Camera_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Camera_3">
+        <rdf:type rdf:resource="http://temp1/Library#Camera"/>
+        <CameraId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</CameraId>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Camera 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Camera_4 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Camera_4">
+        <rdf:type rdf:resource="http://temp1/Library#Camera"/>
+        <CameraId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</CameraId>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Camera 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Client_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Client_1">
+        <rdf:type rdf:resource="http://temp1/Library#Client"/>
+        <PersonAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</PersonAge>
+        <PersonId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">11</PersonId>
+        <PersonName>Client 1</PersonName>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Client 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Client_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Client_2">
+        <rdf:type rdf:resource="http://temp1/Library#Client"/>
+        <PersonAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</PersonAge>
+        <PersonId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</PersonId>
+        <PersonName>Client  12</PersonName>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Client 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Client_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Client_3">
+        <rdf:type rdf:resource="http://temp1/Library#Client"/>
+        <PersonAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</PersonAge>
+        <PersonId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</PersonId>
+        <PersonName>Client 3</PersonName>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Client 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Client_4 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Client_4">
+        <rdf:type rdf:resource="http://temp1/Library#Client"/>
+        <PersonAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">29</PersonAge>
+        <PersonId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</PersonId>
+        <PersonName>Client 4</PersonName>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Client 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Client_5 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Client_5">
+        <rdf:type rdf:resource="http://temp1/Library#Client"/>
+        <PersonAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</PersonAge>
+        <PersonId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</PersonId>
+        <PersonName>Client 5</PersonName>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Client 5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#ClubJoin_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#ClubJoin_1">
+        <rdf:type rdf:resource="http://temp1/Library#ClubJoin"/>
+        <ClubJoinClub rdf:resource="http://temp1/Library#Clubs_2"/>
+        <ClubJoinPerson rdf:resource="http://temp1/Library#Client_3"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Club join 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#ClubJoin_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#ClubJoin_2">
+        <rdf:type rdf:resource="http://temp1/Library#ClubJoin"/>
+        <ClubJoinClub rdf:resource="http://temp1/Library#Clubs_1"/>
+        <ClubJoinPerson rdf:resource="http://temp1/Library#Client_2"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Club join 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#ClubJoin_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#ClubJoin_3">
+        <rdf:type rdf:resource="http://temp1/Library#ClubJoin"/>
+        <ClubJoinClub rdf:resource="http://temp1/Library#Clubs_1"/>
+        <ClubJoinPerson rdf:resource="http://temp1/Library#Client_4"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Club join 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#ClubJoin_4 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#ClubJoin_4">
+        <rdf:type rdf:resource="http://temp1/Library#ClubJoin"/>
+        <ClubJoinClub rdf:resource="http://temp1/Library#Clubs_2"/>
+        <ClubJoinPerson rdf:resource="http://temp1/Library#Client_5"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Club join 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#ClubJoin_5 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#ClubJoin_5">
+        <rdf:type rdf:resource="http://temp1/Library#ClubJoin"/>
+        <ClubJoinClub rdf:resource="http://temp1/Library#Clubs_1"/>
+        <ClubJoinPerson rdf:resource="http://temp1/Library#Client_1"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Club join 5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Clubs_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Clubs_1">
+        <rdf:type rdf:resource="http://temp1/Library#Clubs"/>
+        <ClubType>Thoughts</ClubType>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Clubs 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Clubs_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Clubs_2">
+        <rdf:type rdf:resource="http://temp1/Library#Clubs"/>
+        <ClubType>Reading</ClubType>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Clubs 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Communication_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Communication_1">
+        <rdf:type rdf:resource="http://temp1/Library#Communication"/>
+        <CommunicationEmail>email 1</CommunicationEmail>
+        <CommunicationPhone>phone 1</CommunicationPhone>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Communication 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Communication_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Communication_2">
+        <rdf:type rdf:resource="http://temp1/Library#Communication"/>
+        <CommunicationEmail>email 2</CommunicationEmail>
+        <CommunicationPhone>phone 2</CommunicationPhone>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Communication 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Communication_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Communication_3">
+        <rdf:type rdf:resource="http://temp1/Library#Communication"/>
+        <CommunicationEmail>email 3</CommunicationEmail>
+        <CommunicationPhone>phone 3</CommunicationPhone>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Communication 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Communication_4 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Communication_4">
+        <rdf:type rdf:resource="http://temp1/Library#Communication"/>
+        <CommunicationEmail>email 4</CommunicationEmail>
+        <CommunicationPhone>phone 4</CommunicationPhone>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Communication 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Communication_5 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Communication_5">
+        <rdf:type rdf:resource="http://temp1/Library#Communication"/>
+        <CommunicationEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">email 5</CommunicationEmail>
+        <CommunicationPhone rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phone 5</CommunicationPhone>
+        <rdfs:label>Communication 5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Communication_6 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Communication_6">
+        <rdf:type rdf:resource="http://temp1/Library#Communication"/>
+        <CommunicationEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">email 6</CommunicationEmail>
+        <CommunicationPhone rdf:datatype="http://www.w3.org/2001/XMLSchema#string">phone 6</CommunicationPhone>
+        <rdfs:label>Communication 6</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Donation_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Donation_1">
+        <rdf:type rdf:resource="http://temp1/Library#Donation"/>
+        <DonationPerson rdf:resource="http://temp1/Library#Author_3"/>
+        <DonationAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</DonationAmount>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Donation 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Guard_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Guard_3">
+        <rdf:type rdf:resource="http://temp1/Library#Guard"/>
+        <GuardIs rdf:resource="http://temp1/Library#Stuff_3"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Guard 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#HasBorrowingCard_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#HasBorrowingCard_1">
+        <rdf:type rdf:resource="http://temp1/Library#HasBorrowingCard"/>
+        <HasBorrowingCardCard rdf:resource="http://temp1/Library#BorrowingCard_1"/>
+        <HasBorrowingCardClient rdf:resource="http://temp1/Library#Client_1"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Has borrowing card 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#HasBorrowingCard_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#HasBorrowingCard_2">
+        <rdf:type rdf:resource="http://temp1/Library#HasBorrowingCard"/>
+        <HasBorrowingCardCard rdf:resource="http://temp1/Library#BorrowingCard_2"/>
+        <HasBorrowingCardClient rdf:resource="http://temp1/Library#Client_2"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Has borrowing card 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#HasBorrowingCard_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#HasBorrowingCard_3">
+        <rdf:type rdf:resource="http://temp1/Library#HasBorrowingCard"/>
+        <HasBorrowingCardCard rdf:resource="http://temp1/Library#BorrowingCard_3"/>
+        <HasBorrowingCardClient rdf:resource="http://temp1/Library#Client_3"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Has borrowing card 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Location_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Location_1">
+        <rdf:type rdf:resource="http://temp1/Library#Location"/>
+        <LocationAddress>Address 1</LocationAddress>
+        <LocationCity>Thessaloniki</LocationCity>
+        <LocationZipCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">54626</LocationZipCode>
+        <rdfs:label>Location 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Location_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Location_2">
+        <rdf:type rdf:resource="http://temp1/Library#Location"/>
+        <LocationAddress>Address 2</LocationAddress>
+        <LocationCity>Thessaloniki</LocationCity>
+        <LocationZipCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">54453</LocationZipCode>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Location 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Location_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Location_3">
+        <rdf:type rdf:resource="http://temp1/Library#Location"/>
+        <LocationAddress>Address 3</LocationAddress>
+        <LocationCity>Athens</LocationCity>
+        <LocationZipCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10431</LocationZipCode>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Location 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Location_4 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Location_4">
+        <rdf:type rdf:resource="http://temp1/Library#Location"/>
+        <LocationAddress>Address 4</LocationAddress>
+        <LocationCity>Athens</LocationCity>
+        <LocationZipCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10436</LocationZipCode>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Location 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Location_5 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Location_5">
+        <rdf:type rdf:resource="http://temp1/Library#Location"/>
+        <LocationAddress>Address 5</LocationAddress>
+        <LocationCity>Thessaloniki</LocationCity>
+        <LocationZipCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">54246</LocationZipCode>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Location 5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Location_6 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Location_6">
+        <rdf:type rdf:resource="http://temp1/Library#Location"/>
+        <LocationAddress>Address 6</LocationAddress>
+        <LocationCity>Athens</LocationCity>
+        <LocationZipCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10432</LocationZipCode>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Location 6</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Location_7 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Location_7">
+        <rdf:type rdf:resource="http://temp1/Library#Location"/>
+        <LocationAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Address 7</LocationAddress>
+        <LocationCity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Athens</LocationCity>
+        <LocationZipCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10431</LocationZipCode>
+        <rdfs:label>Location 7</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Location_8 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Location_8">
+        <rdf:type rdf:resource="http://temp1/Library#Location"/>
+        <LocationAddress rdf:datatype="http://www.w3.org/2001/XMLSchema#string">address 8</LocationAddress>
+        <LocationCity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Athens</LocationCity>
+        <LocationZipCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10032</LocationZipCode>
+        <rdfs:label>Location 8</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Pc_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Pc_1">
+        <rdf:type rdf:resource="http://temp1/Library#Pc"/>
+        <TechnologyAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</TechnologyAvailable>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Pc 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Pc_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Pc_2">
+        <rdf:type rdf:resource="http://temp1/Library#Pc"/>
+        <TechnologyAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</TechnologyAvailable>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Pc 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Pc_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Pc_3">
+        <rdf:type rdf:resource="http://temp1/Library#Pc"/>
+        <TechnologyAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</TechnologyAvailable>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Pc 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Printer_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Printer_1">
+        <rdf:type rdf:resource="http://temp1/Library#Printer"/>
+        <TechnologyAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</TechnologyAvailable>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Printer 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Printer_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Printer_2">
+        <rdf:type rdf:resource="http://temp1/Library#Printer"/>
+        <TechnologyAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</TechnologyAvailable>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Printer 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Printer_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Printer_3">
+        <rdf:type rdf:resource="http://temp1/Library#Printer"/>
+        <TechnologyAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</TechnologyAvailable>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Printer 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Printer_4 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Printer_4">
+        <rdf:type rdf:resource="http://temp1/Library#Printer"/>
+        <TechnologyAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</TechnologyAvailable>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Printer 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Printer_5 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Printer_5">
+        <rdf:type rdf:resource="http://temp1/Library#Printer"/>
+        <TechnologyAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</TechnologyAvailable>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Printer 5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Printer_6 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Printer_6">
+        <rdf:type rdf:resource="http://temp1/Library#Printer"/>
+        <TechnologyAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</TechnologyAvailable>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Printer 6</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Printer_7 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Printer_7">
+        <rdf:type rdf:resource="http://temp1/Library#Printer"/>
+        <TechnologyAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</TechnologyAvailable>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Printer 7</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Product_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Product_1">
+        <rdf:type rdf:resource="http://temp1/Library#Product"/>
+        <ProductName>Pen</ProductName>
+        <ProductValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.2</ProductValue>
+        <Product_quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</Product_quantity>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Product 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Product_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Product_2">
+        <rdf:type rdf:resource="http://temp1/Library#Product"/>
+        <ProductName>Pencil</ProductName>
+        <ProductValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</ProductValue>
+        <Product_quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</Product_quantity>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Product 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Product_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Product_3">
+        <rdf:type rdf:resource="http://temp1/Library#Product"/>
+        <ProductName>notebook</ProductName>
+        <ProductValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</ProductValue>
+        <Product_quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</Product_quantity>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Product 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Publisher_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Publisher_1">
+        <rdf:type rdf:resource="http://temp1/Library#Publisher"/>
+        <PublisherLocation rdf:resource="http://temp1/Library#Location_1"/>
+        <publish_book rdf:resource="http://temp1/Library#Book_1"/>
+        <publish_book rdf:resource="http://temp1/Library#Book_2"/>
+        <publish_book rdf:resource="http://temp1/Library#Book_3"/>
+        <PublisherId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</PublisherId>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Publisher 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Publisher_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Publisher_2">
+        <rdf:type rdf:resource="http://temp1/Library#Publisher"/>
+        <PublisherLocation rdf:resource="http://temp1/Library#Location_3"/>
+        <publish_book rdf:resource="http://temp1/Library#Book_4"/>
+        <publish_book rdf:resource="http://temp1/Library#Book_5"/>
+        <PublisherId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</PublisherId>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Publisher 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Rank_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Rank_1">
+        <rdf:type rdf:resource="http://temp1/Library#Rank"/>
+        <oversees rdf:resource="http://temp1/Library#Rank_2"/>
+        <oversees rdf:resource="http://temp1/Library#Rank_3"/>
+        <sees_by rdf:resource="http://temp1/Library#Rank_4"/>
+        <Rank_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Supervisor</Rank_name>
+        <rdfs:label>Rank 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Rank_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Rank_2">
+        <rdf:type rdf:resource="http://temp1/Library#Rank"/>
+        <oversees rdf:resource="http://temp1/Library#Rank_3"/>
+        <sees_by rdf:resource="http://temp1/Library#Rank_1"/>
+        <Rank_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Senior</Rank_name>
+        <rdfs:label>Rank 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Rank_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Rank_3">
+        <rdf:type rdf:resource="http://temp1/Library#Rank"/>
+        <sees_by rdf:resource="http://temp1/Library#Rank_1"/>
+        <sees_by rdf:resource="http://temp1/Library#Rank_2"/>
+        <Rank_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Junior</Rank_name>
+        <rdfs:label>Rank 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Rank_4 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Rank_4">
+        <rdf:type rdf:resource="http://temp1/Library#Rank"/>
+        <oversees rdf:resource="http://temp1/Library#Rank_1"/>
+        <oversees rdf:resource="http://temp1/Library#Rank_2"/>
+        <oversees rdf:resource="http://temp1/Library#Rank_3"/>
+        <Rank_name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manager</Rank_name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Read_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Read_1">
+        <rdf:type rdf:resource="http://temp1/Library#Read"/>
+        <ActionClient rdf:resource="http://temp1/Library#Client_4"/>
+        <ReadBook rdf:resource="http://temp1/Library#Book_1"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Read 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Receipt_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Receipt_1">
+        <rdf:type rdf:resource="http://temp1/Library#Receipt"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Receipt 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Receipt_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Receipt_2">
+        <rdf:type rdf:resource="http://temp1/Library#Receipt"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Receipt 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Receipt_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Receipt_3">
+        <rdf:type rdf:resource="http://temp1/Library#Receipt"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Receipt 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Salary_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Salary_1">
+        <rdf:type rdf:resource="http://temp1/Library#Salary"/>
+        <SalaryStuff rdf:resource="http://temp1/Library#Stuff_1"/>
+        <SalaryAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</SalaryAmount>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Salary 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Salary_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Salary_2">
+        <rdf:type rdf:resource="http://temp1/Library#Salary"/>
+        <SalaryStuff rdf:resource="http://temp1/Library#Stuff_2"/>
+        <SalaryAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">700</SalaryAmount>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Salary 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Salary_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Salary_3">
+        <rdf:type rdf:resource="http://temp1/Library#Salary"/>
+        <SalaryStuff rdf:resource="http://temp1/Library#Stuff_3"/>
+        <SalaryAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">800</SalaryAmount>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Salary 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Salary_4 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Salary_4">
+        <rdf:type rdf:resource="http://temp1/Library#Salary"/>
+        <SalaryStuff rdf:resource="http://temp1/Library#Stuff_4"/>
+        <SalaryAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">600</SalaryAmount>
+        <rdfs:label>Salary 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Salary_5 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Salary_5">
+        <rdf:type rdf:resource="http://temp1/Library#Salary"/>
+        <SalaryStuff rdf:resource="http://temp1/Library#Stuff_5"/>
+        <SalaryAmount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">600</SalaryAmount>
+        <rdfs:label>Salary 5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Schedule_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Schedule_1">
+        <rdf:type rdf:resource="http://temp1/Library#Schedule"/>
+        <ScheduleStuff rdf:resource="http://temp1/Library#Stuff_1"/>
+        <ScheduleTime>Morning</ScheduleTime>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Schedule 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Schedule_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Schedule_2">
+        <rdf:type rdf:resource="http://temp1/Library#Schedule"/>
+        <ScheduleStuff rdf:resource="http://temp1/Library#Stuff_2"/>
+        <ScheduleTime>Afternoon</ScheduleTime>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Schedule 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Schedule_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Schedule_3">
+        <rdf:type rdf:resource="http://temp1/Library#Schedule"/>
+        <ScheduleStuff rdf:resource="http://temp1/Library#Stuff_3"/>
+        <ScheduleTime>night</ScheduleTime>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Schedule 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Schedule_4 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Schedule_4">
+        <rdf:type rdf:resource="http://temp1/Library#Schedule"/>
+        <ScheduleStuff rdf:resource="http://temp1/Library#Stuff_4"/>
+        <ScheduleTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">afternoon</ScheduleTime>
+        <rdfs:label>Schedule 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Schedule_5 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Schedule_5">
+        <rdf:type rdf:resource="http://temp1/Library#Schedule"/>
+        <ScheduleStuff rdf:resource="http://temp1/Library#Stuff_5"/>
+        <ScheduleTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">morning</ScheduleTime>
+        <rdfs:label>Schedule 5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Store_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Store_1">
+        <rdf:type rdf:resource="http://temp1/Library#Store"/>
+        <StoreCommunication rdf:resource="http://temp1/Library#Communication_4"/>
+        <StoreLocation rdf:resource="http://temp1/Library#Location_5"/>
+        <has_warehouse rdf:resource="http://temp1/Library#Warehouse_1"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Store 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Store_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Store_2">
+        <rdf:type rdf:resource="http://temp1/Library#Store"/>
+        <StoreCommunication rdf:resource="http://temp1/Library#Communication_3"/>
+        <StoreLocation rdf:resource="http://temp1/Library#Location_6"/>
+        <has_warehouse rdf:resource="http://temp1/Library#Warehouse_2"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Store 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Store_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Store_3">
+        <rdf:type rdf:resource="http://temp1/Library#Store"/>
+        <Branch_store_of rdf:resource="http://temp1/Library#Store_2"/>
+        <StoreCommunication rdf:resource="http://temp1/Library#Communication_5"/>
+        <StoreLocation rdf:resource="http://temp1/Library#Location_7"/>
+        <has_warehouse rdf:resource="http://temp1/Library#Warehouse_2"/>
+        <rdfs:label>store 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Store_4 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Store_4">
+        <rdf:type rdf:resource="http://temp1/Library#Store"/>
+        <Branch_store_of rdf:resource="http://temp1/Library#Store_2"/>
+        <Branch_store_of rdf:resource="http://temp1/Library#Store_3"/>
+        <StoreCommunication rdf:resource="http://temp1/Library#Communication_6"/>
+        <StoreLocation rdf:resource="http://temp1/Library#Location_8"/>
+        <has_warehouse rdf:resource="http://temp1/Library#Warehouse_2"/>
+        <rdfs:label>store 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Stuff_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Stuff_1">
+        <rdf:type rdf:resource="http://temp1/Library#Stuff"/>
+        <Has_Salary rdf:resource="http://temp1/Library#Salary_1"/>
+        <Has_Schedule rdf:resource="http://temp1/Library#Schedule_1"/>
+        <Working_With rdf:resource="http://temp1/Library#Stuff_5"/>
+        <hasRank rdf:resource="http://temp1/Library#Rank_1"/>
+        <hasRank rdf:resource="http://temp1/Library#Rank_4"/>
+        <PersonAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</PersonAge>
+        <PersonId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</PersonId>
+        <PersonName>Stuff 1</PersonName>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Stuff 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Stuff_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Stuff_2">
+        <rdf:type rdf:resource="http://temp1/Library#Stuff"/>
+        <Has_Salary rdf:resource="http://temp1/Library#Salary_2"/>
+        <Has_Schedule rdf:resource="http://temp1/Library#Schedule_2"/>
+        <Working_With rdf:resource="http://temp1/Library#Stuff_4"/>
+        <hasRank rdf:resource="http://temp1/Library#Rank_2"/>
+        <PersonAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</PersonAge>
+        <PersonId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</PersonId>
+        <PersonName>Stuff 2</PersonName>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Stuff 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Stuff_3 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Stuff_3">
+        <rdf:type rdf:resource="http://temp1/Library#Stuff"/>
+        <Has_Salary rdf:resource="http://temp1/Library#Salary_3"/>
+        <Has_Schedule rdf:resource="http://temp1/Library#Schedule_3"/>
+        <hasRank rdf:resource="http://temp1/Library#Rank_2"/>
+        <PersonAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</PersonAge>
+        <PersonId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</PersonId>
+        <PersonName>Stuff 3</PersonName>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Stuff 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Stuff_4 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Stuff_4">
+        <rdf:type rdf:resource="http://temp1/Library#Stuff"/>
+        <Has_Salary rdf:resource="http://temp1/Library#Salary_4"/>
+        <Has_Schedule rdf:resource="http://temp1/Library#Schedule_4"/>
+        <Same_Rank rdf:resource="http://temp1/Library#Stuff_5"/>
+        <Same_Salary rdf:resource="http://temp1/Library#Stuff_5"/>
+        <Working_With rdf:resource="http://temp1/Library#Stuff_2"/>
+        <hasRank rdf:resource="http://temp1/Library#Rank_3"/>
+        <PersonAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">21</PersonAge>
+        <PersonId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</PersonId>
+        <PersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stuff 4</PersonName>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stuff 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Stuff_5 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Stuff_5">
+        <rdf:type rdf:resource="http://temp1/Library#Stuff"/>
+        <Has_Salary rdf:resource="http://temp1/Library#Salary_5"/>
+        <Has_Schedule rdf:resource="http://temp1/Library#Schedule_5"/>
+        <Same_Rank rdf:resource="http://temp1/Library#Stuff_4"/>
+        <Same_Salary rdf:resource="http://temp1/Library#Stuff_4"/>
+        <Working_With rdf:resource="http://temp1/Library#Stuff_1"/>
+        <hasRank rdf:resource="http://temp1/Library#Rank_3"/>
+        <PersonAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</PersonAge>
+        <PersonId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</PersonId>
+        <PersonName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stuff 5</PersonName>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stuff 5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Supplier_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Supplier_1">
+        <rdf:type rdf:resource="http://temp1/Library#Supplier"/>
+        <SupplierName>Supplier 1</SupplierName>
+        <SupplierType>Books</SupplierType>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Supplier 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Supplier_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Supplier_2">
+        <rdf:type rdf:resource="http://temp1/Library#Supplier"/>
+        <SupplierName>Supplier 2</SupplierName>
+        <SupplierType>stationery</SupplierType>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Supplier 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Warehouse_1 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Warehouse_1">
+        <rdf:type rdf:resource="http://temp1/Library#Warehouse"/>
+        <WarehouseCommunication rdf:resource="http://temp1/Library#Communication_2"/>
+        <WarehouseLocation rdf:resource="http://temp1/Library#Location_2"/>
+        <warehouse_of rdf:resource="http://temp1/Library#Store_1"/>
+        <rdfs:label>Warehouse 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://temp1/Library#Warehouse_2 -->
+
+    <owl:NamedIndividual rdf:about="http://temp1/Library#Warehouse_2">
+        <rdf:type rdf:resource="http://temp1/Library#Warehouse"/>
+        <WarehouseCommunication rdf:resource="http://temp1/Library#Communication_1"/>
+        <WarehouseLocation rdf:resource="http://temp1/Library#Location_4"/>
+        <warehouse_of rdf:resource="http://temp1/Library#Store_2"/>
+        <warehouse_of rdf:resource="http://temp1/Library#Store_3"/>
+        <warehouse_of rdf:resource="http://temp1/Library#Store_4"/>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>Warehouse 2</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

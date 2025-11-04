@@ -1,48 +1,58 @@
 # **Library Bookstore Ontology Knowledge System**
 
-## **📚 Περιγραφή**
-Οντολογία σε **RDFS** & **OWL** για αλυσίδα βιβλιοθηκών-βιβλιοπωλείων με ιεραρχίες, περιορισμούς, λογικές σχέσεις και χρήση SPARQL. Περιλαμβάνει επέκταση με **Reasoning** (HermiT) για ασυνέπειες, συναρτησιακές ιδιότητες και αυτόματη κατηγοριοποίηση αντικειμένων.
+## **📚 Description**
+
+Ontology in **RDFS** & **OWL** for a library–bookstore chain featuring hierarchies, constraints, logical relationships, and SPARQL usage. Includes an extension with **Reasoning** (HermiT) for inconsistency detection, functional properties, and automatic object classification.
 
 ---
 
-### 🧠 **Κύρια Χαρακτηριστικά**
-- **Οντολογία με RDFS (1η φάση)**:
-  - Ορισμός 42 κλάσεων (π.χ. `Book`, `Client`, `Club`) και 53 ιδιοτήτων (`BookAuthor`, `ScheduleTime` κ.ά.)
-  - Σχεδιασμός ιεραρχιών και σχέσεων μεταξύ οντοτήτων.
+### 🧠 **Key Features**
 
-- **Επέκταση με OWL (2η φάση)**:
-  - Χρήση **Protégé** και **TopBraid Composer** για advanced modeling.
-  - Υλοποίηση:
-    - **Λογικών συνθηκών** (`unionOf`, `intersectionOf`)
-    - **Περιορισμών** (necessary/sufficient)
-    - **Συμμετρικών**, **μεταβατικών** και **συναρτησιακών** ιδιοτήτων
+* **Ontology with RDFS (Phase 1)**:
 
-- **SPARQL Ερωτήματα**:
-  - Ανάκτηση πληροφορίας όπως:
-    📖 *“Ποια βιβλία έχει δανειστεί ένας συγκεκριμένος πελάτης;”*
+  * Definition of 42 classes (e.g., `Book`, `Client`, `Club`) and 53 properties (`BookAuthor`, `ScheduleTime`, etc.)
+  * Design of hierarchies and relationships among entities.
 
-- **Reasoning & Αντιμετώπιση Ασυνεπειών**:
-  - Χρήση **HermiT Reasoner** για:
-    - Ανίχνευση τεχνητών ασυνεπειών
-    - Αυτόματη κατηγοριοποίηση αντικειμένων
-    - Έλεγχο της ορθότητας του μοντέλου
+* **Extension with OWL (Phase 2)**:
+
+  * Use of **Protégé** and **TopBraid Composer** for advanced modeling.
+  * Implementation of:
+
+    * **Logical conditions** (`unionOf`, `intersectionOf`)
+    * **Restrictions** (necessary/sufficient)
+    * **Symmetric**, **transitive**, and **functional** properties
+
+* **SPARQL Queries**:
+
+  * Information retrieval examples such as:
+    📖 *“Which books has a specific customer borrowed?”*
+
+* **Reasoning & Inconsistency Handling**:
+
+  * Use of **HermiT Reasoner** for:
+
+    * Detection of artificial inconsistencies
+    * Automatic object classification
+    * Model correctness validation
 
 ---
 
-### ⚙️ **Τεχνολογίες**
-- **Protégé**, **TopBraid Composer**
-- **RDFS**, **OWL**, **SPARQL**
-- **HermiT Reasoner**
+### ⚙️ **Technologies**
+
+* **Protégé**, **TopBraid Composer**
+* **RDFS**, **OWL**, **SPARQL**
+* **HermiT Reasoner**
 
 ---
 
-### 📝 **Σημειώσεις**
-- **Εκπαιδευτικό Πλαίσιο**: Ιδανικό για εξοικείωση με semantic web, ontology modeling και reasoning.
-- **Αρχεία**: Συνοδεύεται από αναφορά με **screenshots**, **λογικές επεξηγήσεις** και **δοκιμαστικές ασυνέπειες**.
+### 📝 **Notes**
+
+* **Educational Context**: Ideal for familiarization with semantic web, ontology modeling, and reasoning.
+* **Files**: Includes a report with **screenshots**, **logical explanations**, and **test inconsistencies**.
 
 ---
 
 **🏷️ Tags**: `Ontology`, `RDFS`, `OWL`, `SPARQL`, `Reasoning`, `Semantic Web`
-**🔧 Open for Contributions**: Ευπρόσδεκτες προτάσεις, βελτιώσεις και επεκτάσεις μέσω *Pull Requests* ή *Issues*.
+**🔧 Open for Contributions**: Suggestions, improvements, and extensions via *Pull Requests* or *Issues* are welcome.
 
-*"Οντολογικό μοντέλο για δίκτυο βιβλιοθηκών/βιβλιοπωλείων με έμφαση στη σημασιολογική αναπαράσταση και ανάλυση."* 🧩📖💡
+*"An ontological model for a network of libraries/bookstores with emphasis on semantic representation and analysis."* 🧩📖💡
